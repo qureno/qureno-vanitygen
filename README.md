@@ -1,10 +1,11 @@
 -----
 Qureno VanityGen Plus
 -----
+I'd like to present a standalone command line vanity address generator called vanitygen.
 
------
+------
 Getting Started  
------  
+------
 **Download the latest binary from: https://github.com/qureno/qureno-vanitygen/releases !**  
 Linux Binary (Compiled on 64bit Debian Testing)  
 Windows Binary (Compiled on Win10 64bit)  
