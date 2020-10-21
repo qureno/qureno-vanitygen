@@ -33,19 +33,19 @@ Windows GPU: `oclvanitygen.exe -C LIST`
 A list of all the supported crypto coins will be output.  
 
 Choose your coin from the list noting the ARGUMENT needed for the coin located in the left hand column.  
-For LBRY it is simply LBRY.  For Bitcoin it is BTC.  Etc...  
+For QRN it is simply QRN.  For Bitcoin it is BTC.  Etc...  
 
-**Now lets generate a LBRY address with the prefix "bTEST":**  
-Linux CPU: `./vanitygen -C LBRY -o results.txt -i -k bTEST`  
-Linux GPU: `./oclvanitygen -C LBRY -o results.txt -i -k bTEST`  
-Windows CPU: `vanitygen.exe -C LBRY -o results.txt -i -k bTEST`  
-Windows GPU: `oclvanitygen.exe -C LBRY -o results.txt -i -k bTEST`  
+**Now lets generate a LBRY address with the prefix "aasda":**  
+Linux CPU: `./vanitygen -C QRN -o results.txt -i -k aasda`  
+Linux GPU: `./oclvanitygen -C QRN -o results.txt -i -k aasda`  
+Windows CPU: `vanitygen.exe -C QRN -o results.txt -i -k aasda`  
+Windows GPU: `oclvanitygen.exe -C QRN -o results.txt -i -k aasda`  
 
- * `-C LBRY` : Chooses the LBRY coin  
+ * `-C QRN` : Chooses the QRN coin  
  * `-o results.txt` : saves the matches to results.txt  
  * `-i` : case-Insensitive(do not add this flag to match exact case)  
  * `-k` : keep going even after match is found(do not add this flag to stop after the first match)  
- * `bTEST` : the address you are searching for(LBRY addresses start with "b")  
+ * `aasda` : the address you are searching for(QRN addresses start with "a")  
 
 ------  
 Fix libcrypto.so.1.0.2 error(Debian, Ubuntu)  
@@ -65,21 +65,21 @@ rm libc6-udeb_2.24-11+deb9u3_amd64.udeb && rm libcrypto1.0.2-udeb_1.0.2l-2+deb9u
 Encrypting and Decrypting a vanitygen or oclvanitygen private key  
 -----  
 **Encrypting generated private key:**  
-Linux: `./vanitygen -E password -C AC Aa`  
-Windows: `./vanitygen -E password -C AC Aa`  
+Linux: `./vanitygen -E password -C QRN abc`  
+Windows: `./vanitygen -E password -C QRN abc`  
 *For GPU use "oclvanitygen" in place of "vanitygen"*  
 
- * `-C AC Aa` Choose AsiaCoin and address prefix "Aa"  
+ * `-C QRN abc` Choose Qureno and address prefix "abc"  
  * `-E password` Encrypt key with password as "password",  
 **NOTE:** It is more secure to use option `-e` with no trailing password,  
 then vanitygen prompts for a password so theres no command history.  
 Also please choose a stronger password than "password".  
 
->Generating AC Address  
->Difficulty: 23   
->AC Pattern: Aa                                                                      
->AC Address: Aa853vQs6QGrTuTHb7Q45tbeB8n4EL47vd  
->AC Protkey: yTYFUWAsgFmMxCbKtu3RdrrJXosZrjxiQFA2o43neB4jPpfLe5owNNrteTs8mpvua8Ge  
+>Decrypting QRN Address
+>Difficulty: 23
+>QRN Pattern: aa
+>QRN Address: aahrX5LHAhy388F8Ehvk1v5SDQzwYuBNLw
+>QRN Privkey: 2EcjJxnqE8jFkSQJD8DHTAhK5xAZj2QWTtNdCFf7HSkCsJ69hPc 
 
 **Decrypting generated ProtKey with Keyconv:**  
 Linux: `./keyconv -C AC -d yTYFUWAsgFmMxCbKtu3RdrrJXosZrjxiQFA2o43neB4jPpfLe5owNNrteTs8mpvua8Ge`  
